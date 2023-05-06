@@ -56,5 +56,6 @@ def write_to_bq(df, bq_table, temp_gcs_bucket, mode):
         .mode(mode)\
         .save()
 
+#This is a change
 
 
