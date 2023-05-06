@@ -1,0 +1,32 @@
+{
+    "source": {
+        "url": "jdbc:postgresql://hostname:port/database",
+        "query": "SELECT * FROM table",
+        "user": "username",
+        "password": "password",
+        "driver": "org.postgresql.Driver",
+        "jdbc_driver_path": "/path/to/jdbc/driver"
+    },
+    "output": {
+        "local": {
+            "path": "/path/to/local/folder",
+            "mode": "overwrite",
+            "format": "parquet"
+        },
+        "gcs": {
+            "path": "gs://bucket/path/to/gcs/folder",
+            "mode": "overwrite",
+            "format": "csv",
+            "connector_path": "/path/to/gcs/conector"
+        },
+        "bq": {
+            "table": "project.dataset.table",
+            "mode": "overwrite",
+            "temporary_gcs_bucket": "gs://bucket/temp",
+            "connector_path": "/path/to/bq/conector"
+        }
+    },
+    "gcp": {
+        "service_account_key_file_path": "path/to/key/file"
+    }
+}
